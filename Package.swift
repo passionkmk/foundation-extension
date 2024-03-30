@@ -7,7 +7,7 @@ let package = Package(
     name: "FoundationExtension",
     platforms: [
         .macOS(.v10_13),
-        .iOS(.v11)
+        .iOS(.v15)
     ],
     products: [
         .library(
