@@ -1,4 +1,4 @@
-// swift-tools-version: 5.8
+// swift-tools-version: 6.0
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -6,8 +6,10 @@ import PackageDescription
 let package = Package(
     name: "FoundationExtension",
     platforms: [
-        .macOS(.v10_13),
-        .iOS(.v15)
+        .macOS(.v12),
+        .iOS(.v15),
+        .watchOS(.v8),
+        .tvOS(.v15)
     ],
     products: [
         .library(
@@ -18,7 +20,18 @@ let package = Package(
     targets: [
         .target(
             name: "FoundationExtension",
-            path: "Sources"
+            path: "Sources",
+            swiftSettings: [
+                .swiftLanguageMode(.v6)
+            ]
+        ),
+        .testTarget(
+            name: "FoundationExtensionTests",
+            dependencies: ["FoundationExtension"],
+            path: "Tests",
+            swiftSettings: [
+                .swiftLanguageMode(.v6)
+            ]
         )
     ]
 )

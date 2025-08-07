@@ -8,6 +8,7 @@
 import Foundation
 
 public extension Int {
+    /// 숫자를 콤마 표기법으로 변환 (1000 -> "1,000")
     var commaNotation: String {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
